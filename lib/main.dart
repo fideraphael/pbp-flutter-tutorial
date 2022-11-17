@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertutorial/form.dart';
-
+import 'package:fluttertutorial/page/form.dart';
+import 'package:fluttertutorial/page/to_do_page.dart';
+import 'package:fluttertutorial/model/to_do.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -23,9 +24,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
-
-
-
   final String title = 'Flutter Demo Home Page';
 
   @override
@@ -79,6 +77,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const MyFormPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('To Do'),
+              onTap: () {
+                // Route the menu to the to do page
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ToDoPage()),
                 );
               },
             ),
